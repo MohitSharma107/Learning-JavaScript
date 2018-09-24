@@ -54,3 +54,41 @@ console.log(job);
  console.log(firstName + ' ' + lastName);
 
 
+/*****************************************
+ * Basic operations
+ */
+
+var yearNow, yearJhon, yearMark;
+ 
+yearNow = 2018;
+yearJhon = 28;
+yearMark = 33
+
+//  Math operators
+yearJhon = yearNow - yearJhon;
+yearMark = yearNow -yearMark;
+
+
+console.log(yearJhon);
+console.log(yearMark);
+
+console.log(YearNow + 2);
+console.log(YearNow * 2);
+console.log(YearNow / 2);
+
+//  Logical operators
+
+var jhonOlder = yearJhon > yearMark;
+console.log(jhonOlder);
+
+// typeof operator
+
+console.log(typeof jhonOlder);
+console.log(typeof 'yo yo');
+console.log(typeof yearJhon);
+
+var x;
+console.log(typeof x);
+
+
+
