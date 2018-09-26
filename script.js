@@ -107,9 +107,9 @@ console.log(isFullAge);
 
 
 // Grouping
-var ageJhonson = now - yearJhonson;
+var ageJhonson = current - yearJhonson;
 var ageMark = 35;
-var average = (ageJhon + ageMark)/2;
+var average = (ageJhonson + ageMark)/2;
 console.log(average);
 
 // Multiple Assignments
@@ -127,3 +127,29 @@ x += 1;
 x++;
 
 
+
+// Coding challenge to compare the BMI index of two person
+
+var massMac = 72;
+var heightMac = 1.65;
+
+var massJack = 95;
+var heightJack = 1.92;
+
+var macBMI = massMac / ( heightMac * heightMac );
+var jackBMI = massJack / ( heightJack * heightJack );
+
+var compareBMI = macBMI >= jackBMI;
+
+console.log('is Mac\'s BMI is greater that jack\'s BMI? ' + compareBMI);
+
+// if/else
+
+var firstName = 'Jhon';
+var civilStatus = 'single';
+
+if (civilStatus === 'married'){
+  console.log(firstName + 'is married')
+} else {
+  console.log( firstName + 'hopefully will marry soon');
+}
