@@ -47,11 +47,11 @@ console.log(job);
  age = 'twenty eight';
  job = 'driver';
 
- alert(firstName + ' is a ' + age + ' year old ' + job + ' . is he married? ' + isMarried);
+//  alert(firstName + ' is a ' + age + ' year old ' + job + ' . is he married? ' + isMarried);
 
 
- var lastName = prompt('what is her last name');
- console.log(firstName + ' ' + lastName);
+//  var lastName = prompt('what is her last name');
+//  console.log(firstName + ' ' + lastName);
 
 
 /*****************************************
@@ -72,9 +72,9 @@ yearMark = yearNow -yearMark;
 console.log(yearJhon);
 console.log(yearMark);
 
-console.log(YearNow + 2);
-console.log(YearNow * 2);
-console.log(YearNow / 2);
+console.log(yearNow + 2);
+console.log(yearNow * 2);
+console.log(yearNow / 2);
 
 //  Logical operators
 
@@ -83,6 +83,7 @@ console.log(jhonOlder);
 
 // typeof operator
 
+
 console.log(typeof jhonOlder);
 console.log(typeof 'yo yo');
 console.log(typeof yearJhon);
@@ -90,5 +91,39 @@ console.log(typeof yearJhon);
 var x;
 console.log(typeof x);
 
+/*****************************************
+ * Operator precedence
+ */
+
+ console.log('operator precedence');
+
+ var current = 2018;
+ var yearJhonson = 1989;
+ var completeAge = 18;
+
+//  Multiple Operators
+var isFullAge = current - yearJhonson >= completeAge;
+console.log(isFullAge);
+
+
+// Grouping
+var ageJhonson = now - yearJhonson;
+var ageMark = 35;
+var average = (ageJhon + ageMark)/2;
+console.log(average);
+
+// Multiple Assignments
+var x,y;
+x = y = (3+5) * 4 - 6;  //8 * 4 -6 // 32 -6 // 26
+console.log(x , y);
+
+// More Operators
+x *= 2;
+console.log(x);
+x += 10;
+console.log(x);
+x = x + 1;
+x += 1;
+x++;
 
 
