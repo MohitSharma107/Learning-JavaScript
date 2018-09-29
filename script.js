@@ -153,3 +153,60 @@ if (civilStatus === 'married'){
 } else {
   console.log( firstName + 'hopefully will marry soon');
 }
+
+
+/*****************************************
+ * Ternary operator and switch statements
+ */
+
+ var name = 'mohit'
+ var age = 17;
+
+ age >=18 ? console.log(name + ' drink beer ') : console.log(name + ' drink juice ');
+
+ var drink = age >= 18 ? 'beer' : 'juice';
+ console.log(name , drink);
+
+ if ( age >= 18)
+ {
+   var drink = 'beer';
+ }
+ else {
+   var drink = 'juice';
+ }
+
+
+
+/*****************************************
+ * Truthy value and flasy values and equality operators
+ */
+
+//  falsy values: undefined, null, '', 0 , NaN
+//  truthy values: values that are not falsy are truthy values
+
+
+var torf;
+
+if (torf) {
+  console.log('value is truthy');
+}
+else {
+  console.log('value is falsy');
+}
+
+
+// Equality operator
+
+var height = 22;
+
+if (height == '22')
+{
+  console.log('operator == does type coercion');
+  // type coercion meant the string is converting into number and then number is compared with number.
+}
+
+if (height === '22')
+{
+  console.log('operator === does not do type coercion');
+  // type coercion meant the string is converting into number and then number is compared with number.
+}
