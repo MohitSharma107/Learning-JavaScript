@@ -172,6 +172,7 @@ console.log(obj.city);
  }
 
 
+
  function calAge(el) {
     return 2018 - el;
  }
@@ -188,6 +189,8 @@ console.log(obj.city);
    }
  }
 
+//  function calAge is callback function here
+//  var ages = arrayCalc(years, calAge()); we wouldnt do this here as calAge() because it will call the function calAge() in any case even if we dont want to call it. And here we want to call calAge function only when arrayCalc function is called
 
  var ages = arrayCalc(years, calAge);
  console.log(ages);
@@ -233,3 +236,35 @@ designerQuestion('jonh');
 designerQuestion('elsa');
 
 interviewQuestion('teacher')('natlie');
+
+/*******************
+ * Immediatly invoked function expression ( IIFE)
+ * ******************/
+
+// condition of the game is we will hide the score and will not allow anyone to see the score
+ function game() {
+   var score = Math.random() * 10;
+   console.log(score >= 5);
+ }
+
+game();
+
+
+// but better way of doing this is through IIFE
+
+// declaring an anonymous function inside the parenthesis and invoking it immedietly here by adding (); next to it.
+// so this kind of function can be called only once only where they are declared. 
+// if will not add parenthesis around the anonymous function then JS parser will think this function as an anonymous function, since we didnt add any variable to this function so it will return error. so to trick JS parse and make it believe that what we have here is expression, not a declaration. So in solution of that we will add parenthesis around it and anything inside parenthesis cannot be a statement in JS. so it will be considered as expression with that
+
+// we are not usinng function here to create a piece of reusable code all we want to create here is new scope that is hidden from the outside scope, so we can safely put variables so with this we obtain data privacy and also wouldn't interfere with other variables in our global execution context
+
+(function () {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})();
