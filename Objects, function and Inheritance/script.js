@@ -197,3 +197,39 @@ console.log(obj.city);
 
 var rates = arrayCalc(ages, maxHeartRate);
  console.log(rates);
+
+
+
+ 
+/*******************
+ * Function Returning Functions
+ * ******************/
+
+function interviewQuestion(job) {
+    if(job === 'teacher') {
+      // this function is anonymous function as it dont have any name on it
+      return function(name) {
+        console.log('So ' + name + ' what subject do you teach?' );
+      } 
+    }  else if (job === 'designer') {
+      return function(name) {
+        console.log('So ' + name + ' could you please tell me what UX design is?');
+      }
+    }
+      else {
+        return function(name) {
+          console.log ( 'Hello '  + name + ' what do you do?');
+        }  
+    }
+}
+
+// getting that function (basically anonymous function) inside a variable
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('jenie');
+
+var designerQuestion = interviewQuestion('designer');
+designerQuestion('mark');
+designerQuestion('jonh');
+designerQuestion('elsa');
+
+interviewQuestion('teacher')('natlie');
