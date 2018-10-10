@@ -104,3 +104,51 @@ var ankit = Object.create(personProto, {
 // the difference between function constructor method and object.create method is that in function constructor method, newly created object inherits from function constructor prototype property and in Object.create method newly created object inherit directly from object by passing it in the argument.
 
 // object.create method allows us to implement complex inheritant structures in easy way then function constructor bcz it allows to specify the object in argument from where we are inheriting properties.
+
+
+/*******************
+ * OBJECTS AND PRIMITIVES
+ * ******************/
+ 
+
+//  Primitives: - variables containing primitives actually hold that data inside of the variable itself
+var a = 23;
+var b = a;
+a = 40;
+console.log(a);
+console.log(b);
+
+
+// Object: - variable containing object actually do not conatin the object but instead they contain reference to place in the memory where the object sits, or where the object is stored. variable declred as the object is just like reference.
+
+
+var obj1 = {
+  name: 'mohit',
+  age: 26
+};
+
+var obj2 = obj1;
+obj1.age = 30;
+
+console.log(obj1.age);
+console.log(obj2.age);
+
+// Function
+
+var age = 27;
+var obj = {
+  name: 'rohit',
+  city: 'California'
+}
+
+function change(a,b) {
+   a = 30;
+   b.city = 'Texas';
+}
+
+change(age, obj);  
+// remember here in change function calling we are not passing whole object here, we are passing reference of the obj object
+
+console.log(age);
+console.log(obj.city);
+// age variable didnt change by function is because a is copy and any changes in copy will not reflect in actual value of variable. same like call by value in java
