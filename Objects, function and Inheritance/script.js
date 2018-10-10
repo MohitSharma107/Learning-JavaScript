@@ -40,6 +40,8 @@ john.calculateAge();
 // we can add this function in the prototype property of the Person function constructor and in this way the can use the calculateAge function without inheriting those methods
 
 
+
+
 var Person = function (name, yearOfBirth, job) {
   this.name = name;
   this.yearOfBirth = yearOfBirth;
@@ -77,3 +79,28 @@ console.log(mark.lastName);
 // console.log(typeof(john));
 // console.log(typeof(Person));
 // console.log(typeof(Object));
+
+// Object.create method
+
+var personProto = {
+  calcAge: function() {
+    console.log(2018 - this.dateOfBirth);
+  }
+}
+
+var mohit = Object.create(personProto);
+mohit.name = 'mohit';
+mohit.dateOfBirth = 1997;
+mohit.job = 'teacher';
+
+// slightely different way to express this is
+
+var ankit = Object.create(personProto, {
+    name: { value: 'mohit'},
+    dateOfBirth: { value: 1997 },
+    job: { value: 'teacher' }
+});
+
+// the difference between function constructor method and object.create method is that in function constructor method, newly created object inherits from function constructor prototype property and in Object.create method newly created object inherit directly from object by passing it in the argument.
+
+// object.create method allows us to implement complex inheritant structures in easy way then function constructor bcz it allows to specify the object in argument from where we are inheriting properties.
