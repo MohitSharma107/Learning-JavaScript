@@ -152,3 +152,48 @@ change(age, obj);
 console.log(age);
 console.log(obj.city);
 // age variable didnt change by function is because a is copy and any changes in copy will not reflect in actual value of variable. same like call by value in java
+
+
+/*******************
+ * Passing Function as an argument
+ * ******************/
+
+//  Function is also object and here we are talking about function inside function
+
+ var years = [1990, 1965, 1937, 2005, 1998];
+
+//  this is just like a generic function( like a machine)
+ function arrayCalc(arr, fn) {
+     var arrRes = [];  //declaring an empty array
+     for(var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+     }
+     return arrRes;   
+ }
+
+
+ function calAge(el) {
+    return 2018 - el;
+ }
+
+ function adult(el) {
+   return el >= 18; //will return answer in true or false
+ }
+
+ function maxHeartRate(el) {
+   if ( el >= 18 && el <= 81 ) {
+     return Math.round(206.9 - ( 0.67 * el ));
+   } else {
+     return -1;
+   }
+ }
+
+
+ var ages = arrayCalc(years, calAge);
+ console.log(ages);
+
+ var isAdult = arrayCalc(ages, adult);
+ console.log(isAdult);
+
+var rates = arrayCalc(ages, maxHeartRate);
+ console.log(rates);
