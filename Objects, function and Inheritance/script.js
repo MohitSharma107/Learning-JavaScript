@@ -258,6 +258,8 @@ game();
 
 // we are not usinng function here to create a piece of reusable code all we want to create here is new scope that is hidden from the outside scope, so we can safely put variables so with this we obtain data privacy and also wouldn't interfere with other variables in our global execution context
 
+// used to structure our code and to obtain data privacy and code modularity.
+
 (function () {
   var score = Math.random() * 10;
   console.log(score >= 5);
@@ -268,3 +270,59 @@ game();
   var score = Math.random() * 10;
   console.log(score >= 5 - goodLuck);
 })();
+
+
+/*******************
+ * Clousure
+ * ******************/
+
+//  An inner function always has access to the variables and parameters of its outer function, even after the outer function has returned
+
+
+function retirement(retirementAge) {
+   var a = ' years left until the reitrement';
+   return function (bornYear) {
+      var age = 2018 - bornYear;
+      console.log((retirementAge - age) + a);
+   }
+}
+
+ //retirement(66)(1990);
+
+        //or
+
+var retirementUS = retirement(66);
+retirementUS(1990); 
+
+var retirementIND = retirement(69);
+retirementIND(1990);
+
+var retirementCAN = retirement(65);
+retirementCAN(1990);
+
+
+// above Question example with closure
+
+function interviewQuestion(job) {
+
+  return function(name) {
+    if(job === 'teacher') {
+      // this function is anonymous function as it dont have any name on it
+        console.log('So ' + name + ' what subject do you teach?' );
+      } 
+
+      else if (job === 'designer') {
+        console.log('So ' + name + ' could you please tell me what UX design is?');
+      }
+      else {
+        return function(name) {
+          console.log ( 'Hello '  + name + ' what do you do?');
+      }
+  }
+ }
+}
+// getting that function (basically anonymous function) inside a variable
+interviewQuestion('teacher')('josh');
+
+
+
