@@ -325,4 +325,77 @@ function interviewQuestion(job) {
 interviewQuestion('teacher')('josh');
 
 
+/*******************
+ * Bind call and apply
+ * ******************/
+ var jhon = {
+   name: 'jhon',
+   age: 26,
+   job: 'teacher',
+   presentation: function (style, timeOfDay) {
+     if(style === 'formal') {
+       console.log(`Good ${timeOfDay} ladies and genteleman. I am ${this.name}. I am a ${this.job}. I am ${this.age} year old`);
+     } else if (style === 'friendly') {
+       console.log(`Hey Whats up? I am ${this.name}. I am a ${this.job}. I am ${this.age} year old`);
+     }
+   }
+ };
 
+ var emily = {
+  name: 'emily',
+  age: 21,
+  job: 'designer',
+ };
+
+
+ jhon.presentation('formal', 'morning');
+ jhon.presentation('friendly', 'morning');
+
+ //call
+
+//  arguments of call will be 
+//this, arguments
+ jhon.presentation.call(emily, 'formal', 'morning');  //the this of jhon object will contain emily as object because we passed emily into it.//#endregion
+
+ //apply
+
+// arguments of apply will be 
+//this, arguments in array
+ jhon.presentation.apply(emily, ['friendly', 'morning']);
+
+
+ //bind
+
+ var jhonFriendly = jhon.presentation.bind(jhon, 'imformal');
+ jhonFriendly('morning');
+
+ var emilyFormal = jhon.presentation.bind(emily, 'formal');
+ emilyFormal('evening');
+
+ var years = [1990, 1965, 1937, 2005, 1998];
+
+//  this is just like a generic function( like a machine)
+ function arrayCalc(arr, fn) {
+     var arrRes = [];  //declaring an empty array
+     for(var i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+     }
+     return arrRes;   
+ }
+
+
+
+ function calAge(el) {
+    return 2018 - el;
+ }
+
+ function isFullAge(limit, el) {
+   return el >= limit; //will return answer in true or false
+ }
+
+ var ages = arrayCalc(years, calAge);
+
+ var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+ console.log(ages);
+ console.log(fullJapan);
+ 
