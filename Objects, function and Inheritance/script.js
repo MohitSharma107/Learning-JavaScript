@@ -489,7 +489,7 @@ c) correct answer (I would use a number for this)
 */
 
 
-
+//function constructor prototype
 (function() {
     function Question(question, answers, correct) {
         this.question = question;
